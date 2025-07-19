@@ -1,4 +1,4 @@
-#🔋 EV Vehicle/Charging Demand Prediction
+# EV Vehicle/Charging 🔋 Demand Prediction
 * Shell-Edunet Skills4Future Internship | Jul–Aug 2025 Organized by Edunet Foundation, AICTE, and Shell
 
 🧠 Objective
