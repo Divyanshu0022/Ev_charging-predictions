@@ -17,6 +17,9 @@ The initial dataset contained inconsistencies that were addressed as follows:
 - **Missing Values**: Null values in the `County` and `State` columns were identified and filled with the placeholder 'Unknown'.
 - **Outlier Detection**: The Interquartile Range (IQR) method was used to identify significant outliers in the `Percent Electric Vehicles` column. A total of 2,476 outliers were detected.
 - **Outlier Treatment**: To minimize skewness while retaining data, outliers were capped at the upper and lower bounds calculated using the 1.5 * IQR rule. This approach effectively normalized the distribution without removing valuable data points.
+<img width="629" height="470" alt="63d86487-5a9e-4bdc-9762-16c28243665e" src="https://github.com/user-attachments/assets/95e41f7a-b8be-4877-af95-8dc8221b3fb7" />
+<img width="629" height="470" alt="82c67d51-eede-432b-8688-62a9939a2b35" src="https://github.com/user-attachments/assets/1e56b6d1-9149-4571-9be1-352d419fef4b" />
+<img width="789" height="590" alt="ca469a5d-15b7-4406-b6cf-8fc5ad83e1c1" src="https://github.com/user-attachments/assets/da0fe587-21ab-48de-85e6-69f475f8e362" />
 
 ### 2. Feature Engineering
 To improve the model's predictive power, several new features were created from the existing data:
@@ -45,9 +48,13 @@ The tuned model performed exceptionally well on the test set, achieving the foll
 - **R² Score**: 1.00
 
 The R² score of 1.00 indicates a perfect fit on the test data, suggesting the model can explain nearly all the variance in the target variable.
+<img width="989" height="590" alt="4846f20a-fc9b-40b0-a9a7-7eff037f7f69" src="https://github.com/user-attachments/assets/b1570fac-19f5-4cec-87a0-053f1700cba7" />
+<img width="808" height="470" alt="8b06955b-a48e-4cc8-bc3a-1ec8e5182f88" src="https://github.com/user-attachments/assets/c8ff73e1-235b-4048-8da2-620e33d8fcc1" />
 
 ### 5. Forecasting
 The trained model was used to forecast EV adoption for the next **36 months (3 years)** for all counties. The forecast was generated iteratively, where each new prediction was used as an input for the subsequent month's forecast.
+<img width="1189" height="590" alt="ae6fec16-236b-4461-97df-ece81e7c040a" src="https://github.com/user-attachments/assets/404feac6-0759-425c-a793-4ea81a5b53f3" />
+<img width="1189" height="590" alt="2226b772-5f84-47f3-9965-c39603b33be9" src="https://github.com/user-attachments/assets/321296d4-dee2-41f4-9e77-bce2b54d7b27" />
 
 ## 📊 Results and Visualizations
 
@@ -56,6 +63,7 @@ The trained model was used to forecast EV adoption for the next **36 months (3 y
 - **Forecast for Kings County**: A detailed 3-year forecast for Kings County shows a continued linear growth in cumulative EV adoption, suggesting a need for infrastructure expansion.
 
 - **Top 5 Counties Forecast**: A comparative analysis of the top 5 counties (Santa Clara, Fairfax, Orange, Honolulu, and Los Angeles) projects continued strong momentum for Santa Clara and Fairfax, a potential plateau for Orange County, and steady growth for the others.
+<img width="1389" height="690" alt="d3b6e743-0753-4af5-bea8-bbb98d275edc" src="https://github.com/user-attachments/assets/e9f9b1ee-df58-4669-8945-c8881bc793f9" />
 
 ## ⚙️ Key Technical Concepts
 
