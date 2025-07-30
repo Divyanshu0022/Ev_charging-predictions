@@ -2,11 +2,47 @@
 
 *A project for the Shell-Edunet Skills4Future Internship | Jul–Aug 2025, organized by Edunet Foundation, AICTE, and Shell.*
 
-This repository contains the code and analysis for predicting electric vehicle (EV) adoption trends. By leveraging historical data, this project aims to forecast future demand, providing insights that can aid in the strategic development of charging infrastructure.
+This project forecasts electric vehicle (EV) adoption trends across counties in Washington State to support smart infrastructure planning, especially for charging stations. It combines data preprocessing, feature engineering, and a trained Random Forest model deployed through a Streamlit web app.
 
 ## 🧠 Objective
 
-The primary goal is to predict demand trends for electric vehicles and charging stations. This forecasting supports smart infrastructure planning and helps stakeholders make data-driven decisions to accommodate the growing EV market.
+Forecast cumulative EV adoption over the next 36 months for U.S. counties using historical data, thereby enabling data-driven infrastructure planning for charging stations.
+
+# ⚙️ Features & Capabilities
+    -📈 Interactive Forecasting App built with Streamlit
+    
+    -🏙️ County-level prediction of EV growth trends
+    
+    -📊 Compare up to 3 counties simultaneously
+    
+    -📍 Feature importance insights from model training
+    
+    -🎨 Custom styling, HTML markdown, and real-time visuals
+
+## 🖥️ How to Run the App Locally
+      bash
+      # Clone the repo
+      git clone https://github.com/your-username/ev-forecasting-app.git
+      cd ev-forecasting-app
+      
+      # Create a virtual environment
+      python -m venv .venv
+      .venv\Scripts\activate  # On Windows
+      # or
+      source .venv/bin/activate  # On macOS/Linux
+      
+      # Install dependencies
+      pip install -r requirements.txt
+      
+      # Run the Streamlit app
+## 🗂️ Folder Structure
+    ├── app.py                       # Main Streamlit deployment script
+    ├── forecasting_ev_model.pkl     # Trained Random Forest model
+    ├── preprocessed_ev_data.csv     # Cleaned dataset with features
+    ├── assets/
+    │   └── ev-car-factory.jpg       # EV image used in dashboard
+    ├── README.md
+    ├── requirements.txt
 
 ## 📂 Project Workflow & Methodology
 
@@ -55,6 +91,16 @@ The R² score of 1.00 indicates a perfect fit on the test data, suggesting the m
 The trained model was used to forecast EV adoption for the next **36 months (3 years)** for all counties. The forecast was generated iteratively, where each new prediction was used as an input for the subsequent month's forecast.
 <img width="1189" height="590" alt="ae6fec16-236b-4461-97df-ece81e7c040a" src="https://github.com/user-attachments/assets/404feac6-0759-425c-a793-4ea81a5b53f3" />
 <img width="1189" height="590" alt="2226b772-5f84-47f3-9965-c39603b33be9" src="https://github.com/user-attachments/assets/321296d4-dee2-41f4-9e77-bce2b54d7b27" />
+
+### 6. 5. Streamlit Deployment
+- Real-time selection (selectbox, multiselect)
+- Styled layout with HTML markdown
+- Dynamic Matplotlib plots for historical vs. forecasted data
+![EV Forecast_page-0001](https://github.com/user-attachments/assets/b8f25d07-7c67-40a5-83a8-d3af995bf19e)
+![EV Forecast_page-0002](https://github.com/user-attachments/assets/727ef880-d3e4-47d5-8207-a46de227a451)
+![EV Forecast_page-0003](https://github.com/user-attachments/assets/efb2a99f-51d5-4fce-ace9-63ea8a566440)
+
+
 
 ## 📊 Results and Visualizations
 
