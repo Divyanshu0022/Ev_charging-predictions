@@ -27,14 +27,14 @@ st.markdown("""
 # Display image after config and styles
 # Stylized title using markdown + HTML
 st.markdown("""
-    <div style='text-align: center; font-size: 36px; font-weight: bold; color: #FFFFFF; margin-top: 20px;'>
+    <div style='text-align: center; font-size: 36px; font-weight: bold; color: #000000; margin-top: 20px;'>
         🔮 EV Adoption Forecaster for a County in Washington State
     </div>
 """, unsafe_allow_html=True)
 
 # Welcome subtitle
 st.markdown("""
-    <div style='text-align: center; font-size: 22px; font-weight: bold; padding-top: 10px; margin-bottom: 25px; color: #FFFFFF;'>
+    <div style='text-align: center; font-size: 22px; font-weight: bold; padding-top: 10px; margin-bottom: 25px; color: #000000;'>
         Welcome to the Electric Vehicle (EV) Adoption Forecast tool.
     </div>
 """, unsafe_allow_html=True)
@@ -44,7 +44,7 @@ st.image("ev-car-factory.jpg", use_container_width=True)
 
 # Instruction line
 st.markdown("""
-    <div style='text-align: left; font-size: 22px; padding-top: 10px; color: #FFFFFF;'>
+    <div style='text-align: left; font-size: 22px; padding-top: 10px; color: #000000;'>
         Select a county and see the forecasted EV adoption trend for the next 3 years.
     </div>
 """, unsafe_allow_html=True)
@@ -127,7 +127,7 @@ combined = pd.concat([
 ], ignore_index=True)
 
 # === Plot Cumulative Graph ===
-st.subheader(f"📊 Cumulative EV Forecast for {county} County")
+st.markdown(f"<h3 style='color:#000000;'>📊 Cumulative EV Forecast for {county} County</h3>", unsafe_allow_html=True)
 fig, ax = plt.subplots(figsize=(12, 6))
 for label, data in combined.groupby('Source'):
     ax.plot(data['Date'], data['Cumulative EV'], label=label, marker='o')
@@ -148,14 +148,16 @@ forecasted_total = forecast_df['Cumulative EV'].iloc[-1]
 if historical_total > 0:
     forecast_growth_pct = ((forecasted_total - historical_total) / historical_total) * 100
     trend = "increase 📈" if forecast_growth_pct > 0 else "decrease 📉"
-    st.success(f"Based on the graph, EV adoption in **{county}** is expected to show a **{trend} of {forecast_growth_pct:.2f}%** over the next 3 years.")
+    st.markdown(f"<div style='color:#13294B; font-size:18px;'>✅ Based on the graph, EV adoption in <b>{county}</b> is expected to show a <b>{trend} of {forecast_growth_pct:.2f}%</b> over the next 3 years.</div>", unsafe_allow_html=True)
+
 else:
     st.warning("Historical EV total is zero, so percentage forecast change can't be computed.")
 
 
 # === New: Compare up to 3 counties ===
 st.markdown("---")
-st.header("Compare EV Adoption Trends for up to 3 Counties")
+st.markdown("<h2 style='color:#13294B;'>Compare EV Adoption Trends for up to 3 Counties</h2>", unsafe_allow_html=True)
+
 
 multi_counties = st.multiselect("Select up to 3 counties to compare", county_list, max_selections=3)
 
@@ -222,7 +224,8 @@ if multi_counties:
     comp_df = pd.concat(comparison_data, ignore_index=True)
 
     # Plot
-    st.subheader("📈 Comparison of Cumulative EV Adoption Trends")
+    st.markdown("<h3 style='color:#13294B;'>📈 Comparison of Cumulative EV Adoption Trends</h3>", unsafe_allow_html=True)
+
     fig, ax = plt.subplots(figsize=(14, 7))
     for cty, group in comp_df.groupby('County'):
         ax.plot(group['Date'], group['Cumulative EV'], marker='o', label=cty)
@@ -251,9 +254,10 @@ if multi_counties:
 
     # Join all in one sentence and show with st.success
     growth_sentence = " | ".join(growth_summaries)
-    st.success(f"Forecasted EV adoption growth over next 3 years — {growth_sentence}")
+    st.markdown(f"<div style='color:#13294B; font-size:18px;'>🚀 Forecasted EV adoption growth over next 3 years — {growth_sentence}</div>", unsafe_allow_html=True)
+
 
 st.success("Forecast complete")
 
-st.markdown("Prepared for the **AICTE Internship Cycle 2 by S4F**")
-st.markdown("Name:-  **Divyanshu**")
+st.markdown("<div style='color:#13294B;'>Prepared for the <b>AICTE Internship Cycle 2 by S4F</b></div>", unsafe_allow_html=True)
+st.markdown("<div style='color:#13294B;'>Name: <b>Divyanshu</b></div>", unsafe_allow_html=True)
