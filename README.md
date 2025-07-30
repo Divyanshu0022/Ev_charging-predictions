@@ -130,4 +130,5 @@ The trained model was used to forecast EV adoption for the next **36 months (3 y
 - **NumPy**: For numerical operations, especially in data preprocessing.
 - **Matplotlib & Seaborn**: For data visualization and plotting results.
 - **Scikit-learn**: For implementing the machine learning model (`RandomForestRegressor`), hyperparameter tuning (`RandomizedSearchCV`), and evaluation metrics.
+- **Streamlit** :	Web app deployment
 - **Jupyter Notebook**: For interactive development and analysis.
